@@ -1,0 +1,12 @@
+<div id="form">
+  <h2>New Post {{currentboard}}</h2>
+
+  <form action="/boards/{{currentboard}}/newPost" method="POST">
+    <label>
+      Post
+      <input type="text" name="paragraph" placeholder="Input Text Here" />
+    </label>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>

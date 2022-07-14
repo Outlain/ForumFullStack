@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: purple;
+}
+nav {
+  height: 10%;
+  display: flex;
+  background-color: rgb(52, 50, 50);
+}
+nav ul {
+  display: flex;
+}
+nav ul li {
+  display: flex;
+  margin: 0px 10px;
+  padding: 0px 100px;
+}
+.colums {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  background-color: blue;
+}
+.colums a {
+  color: black;
+}
+.one {
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+}
+.two {
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+}
+.three {
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+}
+.four {
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+}
+.wrap {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: orange;
+}
+.wrap .left {
+  width: 80%;
+  height: 100%;
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+}
+.wrap .right {
+  width: 20%;
+  height: 100%;
+  background-color: red;
+}
+nav a {
+  color: black;
+}
+.display-board {
+  background-color: gray;
+}
+.display-board > h1 {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+.display-board .wrap .left {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-around; */
+}
+.display-board .wrap .left h1 {
+  height: 10%;
+  width: 100%;
+  border: solid 2px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.display-board .wrap .right {
+  background-color: rgb(83, 69, 69);
+  border: solid 2px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.display-board .wrap .right a {
+  padding: 20px;
+  background-color: white;
+  border-radius: 15px;
+  color: black;
+}
+.link {
+  margin-bottom: 200px;
+}

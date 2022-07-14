@@ -1,0 +1,15 @@
+{{!-- <h1>{{foundBoard.postArray}} --}}
+<div class="display-board">
+  <h1>{{currentboard}}</h1>
+  <div class="wrap">
+    <div class="left">
+      {{#each foundBoard.postArray}}
+        <h3>{{this.currentUser}}</h3>
+        <h1>{{this.paragraph}}</h1>
+      {{/each}}
+    </div>
+    <div class="right">
+      <div class="link"><a href="/boards/{{currentboard}}/newPost">New Post</a></div>
+    </div>
+  </div>
+</div>
