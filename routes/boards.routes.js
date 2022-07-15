@@ -19,7 +19,7 @@ router.get("/boards/:board", (req, res, next) => {
 Boards.findOne({ board: "freeForAll" });
 // .then(here => console.log(here + '////////////////////////////////////////////'))
 
-router.get("/boards/:board/newPost", (req, res, next) => {
+router.get("/boards/:board/newPost", isLoggedIn, (req, res, next) => {
     currentboard = req.params.board;
     // console.log(currentboard + 'even more stgringsadfsdf')
     res.render(`newPost.hbs`, { currentboard });
@@ -30,7 +30,7 @@ router.post("/boards/:board/newPost", (req, res, next) => {
     // console.log(currentboard + "///////////////////////")
     console.log("The Post is happening")
     const { paragraph } = req.body;
-    console.log(paragraph);
+    // console.log(paragraph);
     console.log(req.session);
 
     Posts.create({
@@ -41,7 +41,10 @@ router.post("/boards/:board/newPost", (req, res, next) => {
         console.log(posts);
         Boards.findOne({ board: currentboard }).then((mainboard) => {
             mainboard.postArray.push(posts._id);
-            mainboard.save("done");
+            mainboard.save()
+                .then(() => res.redirect(`/boards/${currentboard}`)
+                )
+                .catch(err => next(err))
             console.log(
                 mainboard.postArray + "/////////////////////////////////////"
             );
@@ -56,7 +59,6 @@ router.post("/boards/:board/newPost", (req, res, next) => {
     // Boards.findByIdAndUpdate(unique._id, { $push: { postsArray: posts._id } }, { new: true })
     //         .then(response => console.log(`response: ` + response))
 
-    res.redirect(`/boards/${currentboard}`);
 });
 
 router.get("/boards/:all/AllPosts", (req, res, next) => {
@@ -72,7 +74,7 @@ router.get("/boards/:all/AllPosts", (req, res, next) => {
         });
 });
 
-router.get("/boards/createcomment/:comment", (req, res, next) => {
+router.get("/boards/createcomment/:comment", isLoggedIn, (req, res, next) => {
     comment = req.params.comment;
     res.render("boards/comments", { comment });
     console.log(comment + 'even more stgringsadfsdf')
@@ -91,11 +93,13 @@ router.post("/boards/createcomment/:comment", (req, res, next) => {
         console.log(comment)
         Posts.findOne({ paragraph: commentz }).then((mainPost) => {
             mainPost.CommentArray.push(comment._id);
-            mainPost.save("done");
+            mainPost.save()
+                .then(() => res.redirect(`/boards/${commentz}/AllPosts`)
+                )
+                .catch(err => next(err))
             console.log(mainPost.CommentArray + "THIS IS THE MAIN POST!!!!!")
         })
     })
-    res.redirect(`/boards/${commentz}/AllPosts`);
 });
 
 module.exports = router;

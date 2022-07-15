@@ -148,7 +148,8 @@ nav a {
 }
 .user-render button a {
   color: white;
-text-decoration: none;}
+  text-decoration: none;
+}
 .comments {
   display: flex;
   flex-direction: column-reverse;

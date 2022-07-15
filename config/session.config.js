@@ -1,7 +1,9 @@
 // config/session.config.js
 
 // require session
+const MongoStore = require('connect-mongo')
 const session = require('express-session');
+const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/basic-auth-two";
 
 // since we are going to USE this middleware in the app.js,
 // let's export it and have it receive a parameter
@@ -24,7 +26,8 @@ module.exports = app => {
         secure: process.env.NODE_ENV === 'production',
         httpOnly: true,
         maxAge: 1200000 // 60 * 1000 ms === 1 min
-      }
+      },
+      store: MongoStore.create({ mongoUrl: MONGO_URI })
     })
   );
 };

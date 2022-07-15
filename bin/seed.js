@@ -1,7 +1,8 @@
+require("dotenv/config");
 const mongoose = require('mongoose');
 const Board = require('../models/Board.model');
 const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost/basic-auth-two';
- 
+
 mongoose
   .connect(MONGO_URI)
   .then((x) => {
@@ -16,9 +17,9 @@ mongoose
 boards = [{ board: "freeForAll" }, { board: "shareTank" }, { board: "fishTrades" }, { board: "brakish" }]
 
 Board.create(boards)
-    .then(boards => {
-        console.log("created boards");
-        mongoose.connection.close();
-    }
-    )
-    .catch(err => console.log(`An error has occured ${err}`))
+  .then(boards => {
+    console.log("created boards");
+    mongoose.connection.close();
+  }
+  )
+  .catch(err => console.log(`An error has occured ${err}`))
