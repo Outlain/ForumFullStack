@@ -1,0 +1,26 @@
+{{!-- <div class="display-board">
+    <div class="wrap">
+        <div class="left">
+            {{#each .postArray}}
+            <div class="inside">
+                <h3></h3>
+            </div>
+            {{/each}}
+        </div>
+        <div class="right">
+            <div class="link"><a href="/boards/{{currentboard}}/newPost">New Post</a></div>
+        </div>
+    </div>
+</div> --}}
+
+{{!-- <h1>{{all}}</h1> --}}
+<div class="comments">
+    <div class="bottom">
+        {{#each foundPostsPopulate.CommentArray}}
+        <h1>{{this.comment}}</h1>
+        {{/each}}
+    </div>
+    <div class="top">
+        <h3><a href="/boards/createcomment/{{all}}">Create New Comment</a></h3>
+    </div>
+</div>

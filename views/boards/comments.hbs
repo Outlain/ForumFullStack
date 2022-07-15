@@ -1,0 +1,11 @@
+<div id="form">
+  <h1>/boards/createcomment/{{comment}}</h1>
+  <form action="/boards/createcomment/{{comment}}" method="POST">
+    <label>
+      Post
+      <input type="text" name="thecomment" placeholder="Input Text Here" />
+    </label>
+    {{!-- <button type="submit"><a href="/boards/{{comment}}/AllPosts">Submit</a></button> --}}
+    <button type="submit">Submit</button>
+  </form>
+</div>

@@ -15,6 +15,7 @@ const postSchema = new Schema(
             type: String,
             required: [true, 'User is required.'],
         },
+        CommentArray: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
     },
 );
 

@@ -5,26 +5,27 @@
 body {
   height: 100vh;
   width: 100vw;
-  background-color: purple;
+  /* background-color: purple; */
 }
 nav {
   height: 10%;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   background-color: rgb(52, 50, 50);
 }
-nav ul {
-  display: flex;
-}
-nav ul li {
-  display: flex;
-  margin: 0px 10px;
-  padding: 0px 100px;
+nav a {
+  text-decoration: none;
+  padding: 5px 10px;
+  background-color: gray;
+  border-radius: 15px;
+  border: solid 2px black;
 }
 .colums {
   height: 90%;
   display: flex;
   flex-direction: column;
-  background-color: blue;
+  background-color: white;
 }
 .colums a {
   color: black;
@@ -89,15 +90,31 @@ nav a {
 .display-board .wrap .left {
   background-color: white;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
   align-items: center;
   /* justify-content: space-around; */
 }
-.display-board .wrap .left h1 {
-  height: 10%;
+.display-board .wrap .left .inside {
+  height: 15%;
   width: 100%;
   border: solid 2px black;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.display-board .wrap .left .inside h3 {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.display-board .wrap .left .inside h5 {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -115,5 +132,26 @@ nav a {
   color: black;
 }
 .link {
-  margin-bottom: 200px;
+  margin-bottom: 100px;
+}
+.user-render {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+}
+.user-render button {
+  padding: 20px;
+  background-color: rgb(49, 49, 140);
+  border-radius: 15px;
+}
+.user-render button a {
+  color: white;
+text-decoration: none;}
+.comments {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  align-items: center;
 }

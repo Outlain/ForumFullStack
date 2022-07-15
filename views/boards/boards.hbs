@@ -1,15 +1,30 @@
 {{!-- <h1>{{foundBoard.postArray}} --}}
-<div class="display-board">
-  <h1>{{currentboard}}</h1>
-  <div class="wrap">
-    <div class="left">
-      {{#each foundBoard.postArray}}
-        <h3>{{this.currentUser}}</h3>
-        <h1>{{this.paragraph}}</h1>
-      {{/each}}
-    </div>
-    <div class="right">
-      <div class="link"><a href="/boards/{{currentboard}}/newPost">New Post</a></div>
+  <div class="display-board">
+    {{#ifCond currentboard "freeForAll"}}
+    <h1>Free For All Board</h1>
+    {{/ifCond}}
+    {{#ifCond currentboard "shareTank"}}
+    <h1>Share Tank Board</h1>
+    {{/ifCond}}
+    {{#ifCond currentboard "fishTrades"}}
+    <h1>Fish Trades Baord</h1>
+    {{/ifCond}}
+    {{#ifCond currentboard "brakish"}}
+    <h1>Brakish Board</h1>
+    {{/ifCond}}
+    <div class="wrap">
+      <div class="left">
+        {{#each foundBoard.postArray}}
+        <div class="inside">
+          {{!-- <h3><a href="/boards/createcomment/{{this.paragraph}}">{{this.paragraph}}</a></h3> --}}
+          <h3><a href="/boards/{{this.paragraph}}/AllPosts">{{this.paragraph}}</a></h3>
+
+          <h5>Posted By :{{this.currentUser}}</h5>
+        </div>
+        {{/each}}
+      </div>
+      <div class="right">
+        <div class="link"><a href="/boards/{{currentboard}}/newPost">New Post</a></div>
+      </div>
     </div>
   </div>
-</div>

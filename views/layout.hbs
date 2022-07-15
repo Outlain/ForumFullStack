@@ -1,31 +1,25 @@
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>{{appTitle}}</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>{{appTitle}}</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
 
-  <body>
-    <nav>
-      <ul>
-        <li id="to-left">
-          <a href="/"> Home Page</a>
-        </li>
-        <li id="to-right">
-          <a href="/signup">Signup </a>
-          <span> | </span>
-          <a href="/login"> Login</a>
-        </li>
-        <a href="/logout">Logout</a>
-      </ul>
-    </nav>
+<body>
+  <nav>
+    <a href="/"> Home Page</a>
+    <a href="/signup">Signup </a>
+    <a href="/login"> Login</a>
+    <a href="/logout">Logout</a>
+    <a href="/userProfile">Current User</a>
+  </nav>
 
-    {{{body}}}
+  {{{body}}}
 
-    <script src="/js/script.js"></script>
-  </body>
+  <script src="/js/script.js"></script>
+</body>
 
 </html>

@@ -1,15 +1,16 @@
-{{!-- views/users/user-profile.hbs --}}
+{{! views/users/user-profile.hbs }}
 
-{{!-- the new version, with the session: --}}
+<div class="user-render">
+  {{#if userInSession}}
+    <h2>Welcome, {{userInSession.username}}!</h2>
+    <p>Check the Home Page for fish forum topics!</p>
+    <br />
+    <br />
+    <button>
+      <a href="/userProfile">Reload the page</a>
+    </button>
+  {{else}}
+    <p>Still no logged in user, sorry!</p>
 
-{{#if userInSession}}
-  <h2>Welcome, {{ userInSession.username }}!</h2>
-  <p>This is your profile page my friend!</p>
-  <button>
-    <a href="/userProfile">Reload the page</a>
-  </button>
-{{else}}
-  
-  <br><p>Still no logged in user, sorry!</p>
-
-{{/if}}
+  {{/if}}
+</div>
